@@ -11,31 +11,34 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class BucketListController {
 
-    private Bucket bucket;
-
-    public BucketListController(){
+    public BucketListController(Bucket bucket){
+        this.bucket = new Bucket();
+//        bucket.addBucket("Nyhavn in Copenhagen, Denmark 2");
+//        bucket.addBucket("Rila Monastery in Bulgaria 2");
     }
+
+    private Bucket bucket;
 
 
 //    public ResponseEntity index() {
 //        return ResponseEntity.ok(myBucketList);
 //    }
     @GetMapping(value = "/")
-    public ResponseEntity index(Bucket bucket) {
-         return ResponseEntity.ok(bucket.getBucketList());
+    public ResponseEntity index() {
+         return ResponseEntity.ok(bucket);
     }
 
     @GetMapping(value = "/bucket")
-    public ResponseEntity getBucket(Bucket bucket, @RequestParam(value="id") Long id) {
+    public ResponseEntity getBucket(@RequestParam(value="id") Long id) {
         return ResponseEntity.ok(bucket.getBucket(id));
     }
 
-//    @PostMapping(value = "/")
-//    public ResponseEntity addToBucketList(@RequestParam(value="name") String name) {
+    @PostMapping(value = "/")
+    public ResponseEntity addToBucketList(@RequestParam(value="name") String name) {
 //        myBucketList.add(new BucketList(counter.incrementAndGet(), name));
 //        return ResponseEntity.ok(myBucketList);
-//          return ResponseEntity.ok(bucket.addBucket(name));
-//    }
+          return ResponseEntity.ok(bucket.addBucket(name));
+    }
 //
 //    @PutMapping(value = "/")
 //    public ResponseEntity updateBucketList(@RequestParam(value="name") String name, @RequestParam(value="id") Long id) {

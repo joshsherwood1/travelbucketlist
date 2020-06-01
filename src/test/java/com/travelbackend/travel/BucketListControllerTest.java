@@ -35,13 +35,23 @@ public class BucketListControllerTest {
         bucket.add(new BucketList(counter.incrementAndGet(), "Rila Monastery in Bulgaria"));
     }
 
-    @Test
-    public void index_getsIndexPage() {
+//    @Test
+//    public void index_getsIndexPage() {
+//
+//        when(mockBucket.getBucketList()).thenReturn(bucket);
+//
+//        ResponseEntity actual = subject.index(mockBucket);
+//        assertThat(actual.getBody().getClass()).isEqualTo(ArrayList.class);
+//        assertThat(actual.getBody()).isEqualTo(bucket);
+//    }
 
-        when(mockBucket.getBucketList()).thenReturn(bucket);
-
-        ResponseEntity actual = subject.index(mockBucket);
-        assertThat(actual.getBody().getClass()).isEqualTo(ArrayList.class);
-        assertThat(actual.getBody()).isEqualTo(bucket);
-    }
+//    @Test
+//    public void show_getsASingleTravelDestination() {
+//
+//        when(mockBucket.getBucket(2).thenReturn(bucket);
+//
+//        ResponseEntity actual = subject.index(mockBucket);
+//        assertThat(actual.getBody().getClass()).isEqualTo(ArrayList.class);
+//        assertThat(actual.getBody()).isEqualTo(bucket);
+//    }
 }
