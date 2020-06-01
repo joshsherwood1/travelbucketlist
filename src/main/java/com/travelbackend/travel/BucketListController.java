@@ -29,11 +29,12 @@ public class BucketListController {
     public ResponseEntity getBucket(Bucket bucket, @RequestParam(value="id") Long id) {
         return ResponseEntity.ok(bucket.getBucket(id));
     }
-//
+
 //    @PostMapping(value = "/")
 //    public ResponseEntity addToBucketList(@RequestParam(value="name") String name) {
 //        myBucketList.add(new BucketList(counter.incrementAndGet(), name));
 //        return ResponseEntity.ok(myBucketList);
+//          return ResponseEntity.ok(bucket.addBucket(name));
 //    }
 //
 //    @PutMapping(value = "/")
