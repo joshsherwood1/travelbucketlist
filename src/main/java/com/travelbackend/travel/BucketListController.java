@@ -39,6 +39,11 @@ public class BucketListController {
 //        return ResponseEntity.ok(myBucketList);
           return ResponseEntity.ok(bucket.addBucket(name));
     }
+
+    @DeleteMapping(value = "/")
+    public ResponseEntity deleteFromBucketList(@RequestParam(value="id") Long id) {
+        return ResponseEntity.ok(bucket.removeBucket(id));
+    }
 //
 //    @PutMapping(value = "/")
 //    public ResponseEntity updateBucketList(@RequestParam(value="name") String name, @RequestParam(value="id") Long id) {

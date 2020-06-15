@@ -53,4 +53,12 @@ public class Bucket {
         myBucketList.add(new BucketList(counter.incrementAndGet(), name));
         return myBucketList;
     }
+
+    public List removeBucket(Long id) {
+        for(BucketList bucket : myBucketList){
+            if(bucket.getId() == id)
+               myBucketList.remove(bucket);
+        }
+        return myBucketList;
+    }
 }
